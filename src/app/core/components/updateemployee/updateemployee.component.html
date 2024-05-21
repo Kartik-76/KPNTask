@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <h2 class="text-center">Update Employee Details</h2>
+    <form>
+      <div class="form-group mt-2">
+        <label for="employeeId">Employee ID:</label>
+        <input type="text" class="form-control" id="employeeId" [(ngModel)]="employeeId" name="employeeId" disabled>
+      </div>
+      <div class="form-group">
+        <label for="employeeName">Employee Name:</label>
+        <input type="text" class="form-control" id="employeeName" [(ngModel)]="employeeName" name="employeeName">
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <!-- <input type="text" class="form-control" id="gender" [(ngModel)]="gender" name="gender"> -->
+        <div class="radio-wrapper">
+            <span ><input type="radio" class="m-auto" name="gender" value="Male" [(ngModel)]="gender" required>Male</span>
+        </div>
+        <div class="radio-wrapper">
+            <span ><input type="radio" class="m-auto" name="gender" value="Female" [(ngModel)]="gender" required>Female</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="department" class="selectbox">Department:</label>
+        <!-- <input type="text" class="form-control" id="department" [(ngModel)]="department" name="department"> -->
+        <select [(ngModel)]="department" name="dept" required>
+            <option [ngValue]="''">Select Department</option>
+            <option [ngValue]="'HR'">HR</option>
+            <option [ngValue]="'QA'">QA</option>
+            <option [ngValue]="'AMS'">AMS</option>
+            <option [ngValue]="'Development'">Development</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="updateEmployee()">Update</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="mt-5 text-center">New Application Form</h1>
+            <form #form="ngForm" (ngSubmit)="onSubmit(); form.resetForm();">
+                <div class="input-group mb-1 p-3">
+                    <span class="input-group-text" id="basic-addon1">Employee Id</span>
+                    <input type="number" class="form-control" placeholder="Employee Id" aria-label="empId" aria-describedby="basic-addon1" name="employeeId"[(ngModel)]="employeeId" required>
+                </div>
+                <div class="input-group mb-1 p-3">
+                    <span class="input-group-text" id="basic-addon1">Employee Name</span>
+                    <input type="text" class="form-control" placeholder="Employee Name" aria-label="empname" aria-describedby="basic-addon1" name="empname"[(ngModel)]="employeeName" required>
+                </div>
+                <div class="input-group mb-1 p-3">
+                    <span class="input-group-text" id="basic-addon1">Gender</span>
+                    <div class="radio-wrapper">
+                        <span ><input type="radio" class="m-auto" name="gender" value="Male" [(ngModel)]="gender" required>Male</span>
+                    </div>
+                    <div class="radio-wrapper">
+                        <span ><input type="radio" class="m-auto" name="gender" value="Female" [(ngModel)]="gender" required>Female</span>
+                    </div>
+                </div>
+                <div class="input-group mb-1 p-3">
+                    <span class="input-group-text" id="basic-addon1">Department</span>
+                    <select [(ngModel)]="department" name="dept" required>
+                        <option [ngValue]="''">Select Department</option>
+                        <option [ngValue]="'HR'">HR</option>
+                        <option [ngValue]="'QA'">QA</option>
+                        <option [ngValue]="'AMS'">AMS</option>
+                        <option [ngValue]="'Development'">Development</option>
+                    </select>
+                </div>
+                <div class="input-group mb-1 p-3" id="basic-addon1">
+                    <button type="submit" class="btn btn-outline-secondary">Submit</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+
+
+</div>

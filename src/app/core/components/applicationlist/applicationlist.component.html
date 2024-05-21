@@ -1,0 +1,36 @@
+<div class="container center header">
+    <h1 class="text-center mt-5">Employee Applications</h1>
+</div>
+
+<div class="container mt-5 table-wrapper">
+    <ng-container *ngIf="showTable">
+        <table class="table table-bordered mt-3 f1-table">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Employee Id</th>
+                    <th>Employee Name</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Update Details</th>
+                    <th>Delete Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employeeData; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{employee.employeeId}}</td>
+                    <td>{{employee.employeeName}}</td>
+                    <td>{{employee.gender}}</td>
+                    <td>{{employee.department}}</td>
+                    <td>
+                        <a [routerLink]="['/updateapplication', employee.employeeId]" class="btn btn-dark">Update</a>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" (click)="onDelete(employee)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+</div>
